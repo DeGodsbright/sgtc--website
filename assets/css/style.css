@@ -1,0 +1,381 @@
+/* ===============================
+   GLOBAL RESET
+=================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #F8F9FC;
+    color: #1A1A1A;
+    line-height: 1.7;
+}
+
+/* ===============================
+   CONTAINER
+=================================*/
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ===============================
+   TYPOGRAPHY
+=================================*/
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #555;
+}
+
+/* ===============================
+   HEADER
+=================================*/
+.header {
+    background: #0B3C8A;
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: #D4AF37;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ===============================
+   BUTTONS
+=================================*/
+.btn-login,
+.btn-primary {
+    background: #D4AF37;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.btn-login:hover,
+.btn-primary:hover {
+    background: #b9962f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* ===============================
+   HERO SECTION
+=================================*/
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(11,60,138,0.85), rgba(11,60,138,0.85));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero-content {
+    max-width: 700px;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #f0f0f0;
+}
+
+/* ===============================
+   SECTIONS
+=================================*/
+.section {
+    padding: 100px 0;
+}
+
+.center {
+    text-align: center;
+}
+
+/* ===============================
+   CARDS
+=================================*/
+.cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    flex: 1;
+    min-width: 260px;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* ===============================
+   FOOTER
+=================================*/
+.footer {
+    background: #0B3C8A;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer h3,
+.footer h4 {
+    margin-bottom: 15px;
+}
+
+.footer p {
+    color: #ddd;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.9rem;
+}
+
+/* ===============================
+   HAMBURGER MENU
+=================================*/
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+=================================*/
+@media (max-width: 768px) {
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #0B3C8A;
+        flex-direction: column;
+        width: 220px;
+        padding: 20px;
+        display: none;
+        border-radius: 8px 0 0 8px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+}
+
+/* ===============================
+   ANIMATIONS
+=================================*/
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HERO IMAGE */
+.hero {
+    background: url('../images/hero.jpg') center/cover no-repeat;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(11,60,138,0.85), rgba(0,0,0,0.6));
+}
+
+.hero-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #0B3C8A;
+}
+
+/* SPLIT SECTION */
+.split {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.split-image img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* LIGHT BACKGROUND */
+.bg-light {
+    background: #f2f4f8;
+}
+
+/* COUNTERS */
+.counter-section {
+    background: #0B3C8A;
+    color: white;
+}
+
+.counters {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.counter h2 {
+    font-size: 3rem;
+}
+
+/* TESTIMONIAL */
+.testimonial {
+    max-width: 700px;
+    margin: 20px auto;
+    font-style: italic;
+}
+
+/* CTA */
+.cta {
+    background: linear-gradient(135deg, #0B3C8A, #092f6b);
+    color: white;
+    padding: 80px 0;
+}
+
+/* SCROLL REVEAL */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
